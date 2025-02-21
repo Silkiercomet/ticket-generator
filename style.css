@@ -9,30 +9,30 @@
   --gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
 }
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('assets/fonts/static/Inconsolata-Regular.ttf') format('truetype');
+  font-family: "Inconsolata";
+  src: url("assets/fonts/static/Inconsolata-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('assets/fonts/static/Inconsolata-Medium.ttf') format('truetype');
+  font-family: "Inconsolata";
+  src: url("assets/fonts/static/Inconsolata-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('assets/fonts/static/Inconsolata-Bold.ttf') format('truetype');
+  font-family: "Inconsolata";
+  src: url("assets/fonts/static/Inconsolata-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('assets/fonts/static/Inconsolata-ExtraBold.ttf') format('truetype');
+  font-family: "Inconsolata";
+  src: url("assets/fonts/static/Inconsolata-ExtraBold.ttf") format("truetype");
   font-weight: 800;
 }
 body {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: "Inconsolata", sans-serif;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 *,
 *::before,
@@ -51,21 +51,26 @@ body {
 
 body {
   line-height: 1.5;
-  font-family: 'Inconsolata', sans-serif;
+  font-family: "Inconsolata", sans-serif;
   -webkit-font-smoothing: antialiased;
   width: 100%;
-
-
 }
-.wrapper2{
+.wrapper2 {
   display: grid;
   justify-content: center;
   align-items: start;
+  grid-template-rows: 100px 1fr;
   width: 100%;
-  background-image: url('assets/images/pattern-lines.svg'), url('assets/images/background-desktop.png'); /* Added pattern-lines.svg */
-  background-size: cover, cover; /* Ensure both images cover the entire background */
-  background-repeat: no-repeat, no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
-  background-position: top, center; /* Center both images */
+  background-image: url("assets/images/pattern-lines.svg"),
+  url("assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+  url("assets/images/pattern-circle.svg"),
+  url("assets/images/pattern-circle.svg"),
+  url("assets/images/pattern-squiggly-line-top.svg"),
+    url("assets/images/background-desktop.png");
+     /* Added pattern-lines.svg */
+  background-size: cover, 50% , 15%,15%, 40%, cover; /* Ensure both images cover the entire background */
+  background-repeat: no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
+  background-position: top, bottom left, 5% -10%, 78% 50%, top right, center; /* Center both images */
   margin: 0;
   min-height: 100vh;
   position: relative;
@@ -98,36 +103,36 @@ h6 {
   overflow-wrap: break-word;
 }
 
-.wrapper{
+.wrapper {
   max-width: 1000px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-header{
+header {
   display: grid;
   gap: 2rem;
   padding-inline: 1rem;
 }
-h1{
+h1 {
   font-size: 4rem;
   text-align: center;
   line-height: 4rem;
   color: var(--neutral-0);
 }
-.subheader{
+.subheader {
   color: var(--neutral-300);
   text-align: center;
   font-size: 1.5rem;
 }
-.logo{
+.logo {
   margin-inline: auto;
   margin-top: 1.5rem;
 }
-form{
+form {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   flex-direction: column;
   max-width: 700px;
   padding-inline: 1.5rem;
@@ -135,39 +140,39 @@ form{
   color: var(--neutral-300);
   padding-block: 2rem;
 }
-.avatar-upload, 
+.avatar-upload,
 input[type="text"],
 input[type="email"],
-.avatar-upload figure{
-padding: 8px 15px;
-background: rgba(255, 255, 255, 0.09);
-border-radius: 6px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-color: var(--neutral-0);
+.avatar-upload figure {
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--neutral-0);
 }
 input[type="text"]:focus,
-input[type="email"]:focus{
+input[type="email"]:focus {
   background: rgba(255, 255, 255, 0.267);
 }
-.avatar-upload{
-display: grid;
-place-items: center;
-padding: 2rem;
-gap: 1rem;
-cursor: pointer;
-margin-bottom: 0.5rem;
-border-style: dashed;
-border-color: var(--neutral-500);
-width: 500px;
-  figure{
-  background: rgba(255, 255, 255, 0.03);
-  border: none;
+.avatar-upload {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  border-style: dashed;
+  border-color: var(--neutral-500);
+  width: 500px;
+  figure {
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
   }
 }
-button{
+button {
   background-color: var(--orange-700);
   color: var(--neutral-900);
   padding: 10px;
@@ -177,45 +182,58 @@ button{
   cursor: pointer;
   margin-top: 1rem;
 }
-.avatar_footer{
+.avatar_footer {
   font-size: 0.8rem;
   color: var(--neutral-500);
 }
 .background-image1,
 .background-image2,
 .background-image3,
-.background-image4{
+.background-image4 {
   position: absolute;
   z-index: -1;
 }
-@media (max-width: 1024px) { /* Tablet viewport */
-  body {
-    background-image:  url('assets/images/pattern-lines.svg'),url('assets/images/background-tablet.png');
+@media (max-width: 1024px) {
+  /* Tablet viewport */
+  .wrapper2 {
+    background-image: url("assets/images/pattern-lines.svg"),
+    url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+      url("assets/images/background-tablet.png");
+      background-size: cover, 50% , cover; /* Ensure both images cover the entire background */
+      background-repeat: no-repeat, no-repeat, no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
+      background-position: top, bottom left, center; /* Center both images */
   }
-  h1{
+  h1 {
     font-size: 3rem; /* Adjust font size for tablet */
     line-height: 3.5rem; /* Adjust line height for tablet */
   }
-
-
 }
 
-@media (max-width: 568px) { /* Mobile viewport */
-  body {
-    background-image: url('assets/images/pattern-lines.svg'), url('assets/images/background-mobile.png');
-    background-position: bottom;
-    background-size: 100%;
+@media (max-width: 568px) {
+  /* Mobile viewport */
+  form {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    .avatar-upload{
+      width: auto;
+      align-self: center;
+      margin-inline: auto;
+    }
   }
-  h1{
+  h1 {
     font-size: 2rem; /* Adjust font size for mobile */
     line-height: 2.5rem; /* Adjust line height for mobile */
   }
-  .subheader{
+  .subheader {
     color: var(--neutral-300);
     text-align: center;
     font-size: 1.3rem;
   }
-  .avatar-upload, input, button, .avatar_footer{
+  .avatar-upload,
+  input,
+  button,
+  .avatar_footer {
     width: 90%;
   }
 }
