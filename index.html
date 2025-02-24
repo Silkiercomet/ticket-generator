@@ -31,9 +31,9 @@
           <p>Upload Avatar</p>
           <div class="avatar-upload">
             <figure>
-              <img src="./assets/images/icon-upload.svg" alt="upload image">
+              <img src="./assets/images/icon-upload.svg" alt="upload image" id="formImage">
             </figure>
-            <div>Drag and drop or click to upload</div>
+            <div>click to upload</div>
           </div>
           <span class="avatar_footer">Upload your photo (JPG or PNG, max size: 500KB).</span>
         </label>
@@ -46,7 +46,7 @@
         <input type="text" id="github" placeholder="@yourusername">
         <button type="submit">Generate My Ticket</button>
       </form>
-      <div class="tickect hidden">
+      <div class="tickect none hidden">
         <img src="assets/images/pattern-ticket.svg" alt="tickect holder">
         <div class="tickect-info">
           <img src="assets/images/logo-full.svg" alt="event logo">
@@ -54,11 +54,11 @@
         </div>
         <div class="tickect-user">
           <figure>
-            <img src="assets/images/image-avatar.jpg" alt="avatar">
+            <img src="assets/images/image-avatar.jpg" alt="avatar" id="tickectImage">
           </figure>
           <div class="tickect-user-info">
-            <h2>name</h2>
-            <span id="email">example@email.com</span>
+            <h2 id="nameUser">name</h2>
+            <span id="emailUser">example@email.com</span>
           </div>
         </div>
         <span id="tickect_id">#659856</span>

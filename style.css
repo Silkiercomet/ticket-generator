@@ -28,16 +28,12 @@
   src: url("assets/fonts/static/Inconsolata-ExtraBold.ttf") format("truetype");
   font-weight: 800;
 }
-body {
-  font-family: "Inconsolata", sans-serif;
-}
-.hidden {
-  display: none;
-}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -47,13 +43,13 @@ body {
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   line-height: 1.5;
   font-family: "Inconsolata", sans-serif;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
 }
 .wrapper2 {
   display: grid;
@@ -62,19 +58,17 @@ body {
   grid-template-rows: 100px 1fr;
   width: 100%;
   background-image: url("assets/images/pattern-lines.svg"),
-  url("assets/images/pattern-squiggly-line-bottom-desktop.svg"),
-  url("assets/images/pattern-circle.svg"),
-  url("assets/images/pattern-circle.svg"),
-  url("assets/images/pattern-squiggly-line-top.svg"),
+    url("assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+    url("assets/images/pattern-circle.svg"),
+    url("assets/images/pattern-circle.svg"),
+    url("assets/images/pattern-squiggly-line-top.svg"),
     url("assets/images/background-desktop.png");
-     /* Added pattern-lines.svg */
-  background-size: cover, 50% , 15%,15%, 40%, cover; /* Ensure both images cover the entire background */
+  /* Added pattern-lines.svg */
+  background-size: cover, 50%, 15%, 15%, 40%, cover; /* Ensure both images cover the entire background */
   background-repeat: no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
   background-position: top, bottom left, 5% -10%, 78% 50%, top right, center; /* Center both images */
   margin: 0;
   min-height: 100vh;
-  position: relative;
-  z-index: -1;
 }
 
 img,
@@ -85,7 +79,10 @@ svg {
   display: block;
   max-width: 100%;
 }
-
+#formImage{
+  max-width: 100px;
+  max-height: 100px;
+}
 input,
 button,
 textarea,
@@ -130,6 +127,7 @@ h1 {
   margin-inline: auto;
   margin-top: 1.5rem;
 }
+
 form {
   display: flex;
   gap: 0.5rem;
@@ -157,6 +155,22 @@ input[type="text"]:focus,
 input[type="email"]:focus {
   background: rgba(255, 255, 255, 0.267);
 }
+
+button {
+  background-color: var(--orange-700);
+  color: var(--neutral-900);
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.avatar_footer {
+  font-size: 0.8rem;
+  color: var(--neutral-500);
+}
+
 .avatar-upload {
   display: grid;
   place-items: center;
@@ -172,36 +186,76 @@ input[type="email"]:focus {
     border: none;
   }
 }
-button {
-  background-color: var(--orange-700);
-  color: var(--neutral-900);
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 1rem;
+
+.tickect{
+  position: relative;
+  display: grid;
+  max-width: 600px;
+  margin-inline: auto;
+  place-items: center;
+  margin-block: 3rem;
+  color: var(--neutral-0);
+  padding-inline: 1rem;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: 300ms ease-in-out;
 }
-.avatar_footer {
-  font-size: 0.8rem;
-  color: var(--neutral-500);
-}
-.background-image1,
-.background-image2,
-.background-image3,
-.background-image4 {
+.tickect-user, .tickect-info, #tickect_id{
   position: absolute;
-  z-index: -1;
+}
+.tickect-user{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  left: 40px;
+  bottom: 20px;
+  figure img{
+    width: 90px;
+    border-radius: 20px;
+  }
+}
+.tickect-user-info{
+  h2{
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+  }
+  span{
+    color: var(--neutral-300);
+  }
+}
+.tickect-info{
+  top: 20px;
+  left: 40px;
+  img{
+    height: 40px;
+  }
+  span{
+    margin-left: 4rem;
+    color: var(--neutral-300);
+  }
+}
+
+#tickect_id{
+  top: 50%;
+  bottom: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--neutral-500);
+  font-size: 2rem;
+  line-height: 0;
 }
 @media (max-width: 1024px) {
   /* Tablet viewport */
   .wrapper2 {
     background-image: url("assets/images/pattern-lines.svg"),
-    url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+      url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
       url("assets/images/background-tablet.png");
-      background-size: cover, 50% , cover; /* Ensure both images cover the entire background */
-      background-repeat: no-repeat, no-repeat, no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
-      background-position: top, bottom left, center; /* Center both images */
+    background-size: cover, 50%, cover; /* Ensure both images cover the entire background */
+    background-repeat: no-repeat, no-repeat, no-repeat; /* Make pattern-lines.svg repeat, keep background-desktop.png no-repeat */
+    background-position: top, bottom left, center; /* Center both images */
   }
   h1 {
     font-size: 3rem; /* Adjust font size for tablet */
@@ -215,7 +269,7 @@ button {
     width: 90%;
     justify-content: center;
     align-items: center;
-    .avatar-upload{
+    .avatar-upload {
       width: auto;
       align-self: center;
       margin-inline: auto;
@@ -236,4 +290,25 @@ button {
   .avatar_footer {
     width: 90%;
   }
+  .tickect-user{
+    figure img{
+      width: 70px;
+
+    }
+  }
+  .tickect-user-info{
+  h2{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+}
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.none {
+  display: none;
 }
