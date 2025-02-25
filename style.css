@@ -6,16 +6,26 @@
   --neutral-900: hsl(248, 70%, 10%);
   --orange-500: hsl(7, 88%, 67%);
   --orange-700: hsl(7, 71%, 60%);
-  --gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  --gradient-text: linear-gradient(
+    to right,
+    hsl(7, 86%, 67%),
+    hsl(0, 0%, 100%)
+  );
 }
-.error-message{
+.error-message {
   color: var(--orange-700);
   display: none;
 }
-.error{
+.error {
   border-color: var(--orange-700);
 }
-.error + .error-message{
+.gradient {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.error + .error-message {
   display: block;
 }
 @font-face {
@@ -89,7 +99,7 @@ svg {
   display: block;
   max-width: 100%;
 }
-#formImage{
+#formImage {
   max-width: 100px;
   max-height: 100px;
 }
@@ -197,7 +207,7 @@ button {
   }
 }
 
-.tickect{
+.tickect {
   position: relative;
   display: grid;
   max-width: 600px;
@@ -212,43 +222,45 @@ button {
   pointer-events: all;
   transition: 300ms ease-in-out;
 }
-.tickect-user, .tickect-info, #tickect_id{
+.tickect-user,
+.tickect-info,
+#tickect_id {
   position: absolute;
 }
-.tickect-user{
+.tickect-user {
   display: flex;
   gap: 1rem;
   align-items: center;
   left: 40px;
   bottom: 20px;
-  figure img{
+  figure img {
     width: 90px;
     border-radius: 20px;
   }
 }
-.tickect-user-info{
-  h2{
+.tickect-user-info {
+  h2 {
     font-size: 3rem;
     font-weight: 500;
     line-height: 2.5rem;
   }
-  span{
+  span {
     color: var(--neutral-300);
   }
 }
-.tickect-info{
+.tickect-info {
   top: 20px;
   left: 40px;
-  img{
+  img {
     height: 40px;
   }
-  span{
+  span {
     margin-left: 4rem;
     color: var(--neutral-300);
   }
 }
 
-#tickect_id{
+#tickect_id {
   top: 50%;
   bottom: 50%;
   right: 10px;
@@ -300,19 +312,18 @@ button {
   .avatar_footer {
     width: 90%;
   }
-  .tickect-user{
-    figure img{
+  .tickect-user {
+    figure img {
       width: 70px;
-
     }
   }
-  .tickect-user-info{
-  h2{
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 2rem;
+  .tickect-user-info {
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2rem;
+    }
   }
-}
 }
 .hidden {
   opacity: 0;
