@@ -37,13 +37,16 @@
           </div>
           <span class="avatar_footer">Upload your photo (JPG or PNG, max size: 500KB).</span>
         </label>
-        <input type="file" id="avatar" accept="image/jpeg, image/png" class="hidden">
+        <input type="file" id="avatar" accept="image/jpeg, image/png" class="hidden" >
         <label for="fullname">Full Name</label>
-        <input type="text" id="fullname">
+        <input type="text" id="fullname" required>
+        <span class="error-message" id="fullname-error">Please enter your full name.</span>
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="example@email.com">
+        <input type="email" id="email" placeholder="example@email.com" required >
+        <span class="error-message" id="email-error">Please enter a valid email address.</span>
         <label for="github">GitHub Username</label>
-        <input type="text" id="github" placeholder="@yourusername">
+        <input type="text" id="github" placeholder="@yourusername" required>
+        <span class="error-message" id="github-error">Please enter your GitHub username.</span>
         <button type="submit">Generate My Ticket</button>
       </form>
       <div class="tickect none hidden">

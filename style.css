@@ -8,6 +8,16 @@
   --orange-700: hsl(7, 71%, 60%);
   --gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
 }
+.error-message{
+  color: var(--orange-700);
+  display: none;
+}
+.error{
+  border-color: var(--orange-700);
+}
+.error + .error-message{
+  display: block;
+}
 @font-face {
   font-family: "Inconsolata";
   src: url("assets/fonts/static/Inconsolata-Regular.ttf") format("truetype");

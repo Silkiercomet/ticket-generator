@@ -20,9 +20,9 @@ imageInput.addEventListener('change', (event) => {
 // form submit
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const fullname = document.getElementById('fullname').value;
-  const email = document.getElementById('email').value;
-  const github = document.getElementById('github').value;
+  const fullname = document.getElementById('fullname');
+  const email = document.getElementById('email');
+  const github = document.getElementById('github');
   const avatar = imageInput.files[0];
   const data = {
     fullname,
@@ -31,15 +31,14 @@ document.querySelector('form').addEventListener('submit', (e) => {
     avatar
   };
 
+
   const header = document.querySelector('header');
   const form = document.querySelector('form');
   const h1 = document.querySelector('h1');
   const subheading = document.querySelector('.subheader');
   const ticket = document.querySelector('.tickect');
-document.querySelector('#nameUser').textContent = data.fullname;
-document.querySelector('#emailUser').textContent = data.github;
-
-console.log(avatar)
+document.querySelector('#nameUser').textContent = data.fullname.value;
+document.querySelector('#emailUser').textContent = data.github.value;
 
   header.classList.add('hidden');
   form.classList.add('hidden');
@@ -50,19 +49,21 @@ console.log(avatar)
       behavior: 'smooth'
     });
   }
-    const ticketImage = document.getElementById('tickectImage');
-    console.log(ticketImage)
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      ticketImage.src = e.target.result;
+
+    if(avatar){
+      const ticketImage = document.getElementById('tickectImage');
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        ticketImage.src = e.target.result;
+      }
+      reader.readAsDataURL(avatar);
     }
-    reader.readAsDataURL(avatar);
   setTimeout(() => {
     scrollToTop();
     form.classList.add('none');
     ticket.classList.remove('none');
-    h1.textContent = `Congrats, ${data.fullname}! Your ticket is ready.`; //Change h1 text
-  subheading.textContent = `We've emailed your ticket to ${data.email} and will send updates in the run up to the event.`; //Change subheading text
+    h1.textContent = `Congrats, ${data.fullname.value}! Your ticket is ready.`; //Change h1 text
+  subheading.textContent = `We've emailed your ticket to ${data.email.value} and will send updates in the run up to the event.`; //Change subheading text
     header.classList.remove('hidden');
     ticket.classList.remove('hidden');
 
